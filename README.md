@@ -35,7 +35,7 @@ The methods implemented are described in detail in Lopes 2015 (PhD thesis).
 "method" is a character string, and defines the method to test the null hypothesis of stationarity (either "KPSS" or "adf"); 
 "cutoff" is numeric, and defines the p-value level below which stationarity is rejected. Default is list(maxorder=2, method="KPSS", cutoff=0.05).
 * **sibling.filter** - logical, TRUE or FALSE (default). If TRUE scores between siblings (variables with common causes) are filtered (the respective scores are NA). Sibling identification is as described in Lopes 2015.
-* **sf.mincor** - numeric (default 0.7). This parameter defines the minimum linear correlation for sibling identification. 
+* **sf.mincor** - numeric (default 0.7). This parameter defines the minimum linear correlation (absolute value) for sibling identification. 
 * **sf.maxlag** - integer (default 2). This parameter defines the maximum considered lag in sibling identification. 
 * **sf.matrix** - (optional) p times p sibling matrix (if already computed). Non zero elements indicate siblings. 
 * **gc3rank.method** - character string, either "static" or "dynamic" (default). This parameter defines the method to compute the ranking in GC3.
