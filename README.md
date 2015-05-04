@@ -50,11 +50,11 @@ The methods implemented are described in detail in Lopes 2015 (PhD thesis).
 
 This function implements 1-lag dynamic network inference algorithms for time series. For each target, predictors are lagged (1 lag), and scored according to the selected model. Returns a p times p matrix of scores. Score [i,j] is from variable i to j. 
 
-Implemented methods are bivariate mutual information, aracne, mrmr, cmim, mimr, random forests (RF), and lasso/least angle regression (lars). The last two call the packages randomForest and lars. 
+Implemented methods are bivariate mutual information, aracne, clr, mrmr, cmim, mimr, random forests (RF), and lasso/least angle regression (lars). The last two call the packages randomForest and lars. 
 
 In RF, variable importance is measured with the mean decrease in node impurity ("IncNodePurity", in the case of regression, measured with RSS). The arguments of the function randomForest may be passed through the argument rf.pars. 
 
-In lars, scores are obtained as the average of predictor coefficients along the lambda path. The arguments of the lars functions may be passed through the arguments lars.pars and predict.lars.pars. 
+In lars, scores are obtained as the average of predictor coefficients for various lambda values. The arguments of the lars functions may be passed through the arguments lars.pars and predict.lars.pars. 
 
 As described in PhD thesis Lopes 2015.
 
@@ -63,7 +63,7 @@ As described in PhD thesis Lopes 2015.
 
 #####  Arguments
 * **datamatrix** - a numeric matrix of dimension n times p (samples are rows, variables are columns). No NA or Inf values allowed.  
-* **Methods** - character string, either "mi" (mutual information) "aracne", "mrmr", "cmim", "mimr", "rf" (random forests), or "lars" (least angle regression). This parameter selects the used inference method. Multiple methods may be selected. 
+* **Methods** - character string, either "mi" (mutual information) "aracne", "clr", "mrmr", "cmim", "mimr", "rf" (random forests), or "lars" (least angle regression). This parameter selects the used inference method. Multiple methods may be selected. 
 * **mi.cutoff** - numeric (default 0.05). The mutual information is estimated as a function of the linear correlation (Gaussian assumption). This value is the significancy cut-off for the statistical test on linear correlations. 
 * **rf.pars** - Named list of parameters for the function randomForest::randomForest. Default is list(mtry=sqrt(number of variables), ntree=1000). 
 * **lars.pars** - Named list of parameters for the function lars::lars. Default is list(type="lasso", use.gram=TRUE)
