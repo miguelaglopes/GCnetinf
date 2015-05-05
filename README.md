@@ -4,6 +4,8 @@ This package computes dynamic causality scores between variables from a multiple
 Consists of two main functions, described below. 
 The first function is "gcausal" and estimates linear Granger causality (GC) scores. Bivariate and conditional (1 order) GC tests are available, returning a matrix of z-scores, where the element [i,j] is the score from variable i to j. The conditional GC score from a cause to effect is the minimum 1 order conditional GC score obtained, for all individual conditioning variables. An heuristic is applied in order to speed up this search, as described in Lopes 2015. Options for lag selection and integrated variables are also available. The second function is "netinf1l" and implements dynamic versions (1-lag) of state of the art network inference algorithms: bivariate mutual information, aracne, mrmr, cmim, mimr, random forests, and lasso/least angle regression (assessed in Lopes 2015). 
 
+(requires R packages tseries, ppcor, randomForest, lars)
+
 ##### Author: 
 Miguel Lopes
 ##### Reference: 
