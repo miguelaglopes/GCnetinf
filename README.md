@@ -27,7 +27,7 @@ The methods implemented are described in detail in Lopes 2015 (PhD thesis).
 #####  arguments:
 * **datamatrix** - a numeric matrix of dimension n times p (samples are rows, variables are columns). No NA or Inf values allowed. 
 * **type** - character string, either "bivariate" or "conditional" (default). 
-* **lagmethod** - character string, either "first (default) or "fsel". The lag(s) of the target are always the first (its number may be estimated by AIC). Then, an equal number of predictor lags are considered. However, these may be selected in a forward selection procedure, instead of being the first. For instance, the lags returned by "first" may be 1,2,3, and the lags returned by "fsel" 2,1,4.
+* **lagmethod** - character string, either "first" (default) or "fsel". The lag(s) of the target are always the first (its number may be estimated for instance by AIC). Then, an equal number of predictor lags are considered. However, these may be selected in a forward selection procedure, instead of being the first. For instance, the lags returned by "first" may be 1,2,3, and the lags returned by "fsel" 2,1,4.
 * **maxnumlags** - integer (default 1). This parameter defines the maximum number of lags (of a variable) to be included in the GC model.
 * **maxlag** - integer (default 1). This parameter defines the maximum lag to be included in the GC model (it may be different than maxnumlags when lagmethod="fsel").
 * **crit** - character string, either "aicc" (default), "aic" or "bic". This parameter defines the criterion to assess linear models. 
